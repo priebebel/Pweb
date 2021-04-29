@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 10 - Janela - Aluna Priscila</title>
+	<script type="text/javascript">
+		
+		imagens = new Image();
+		imagens[0] = "imagens/janelafechada.png";
+		imagens[1] = "imagens/janelaaberta.png";
+		imagens[2] = "imagens/janelaquebra.png";
+
+	</script>
+</head>
+<body>
+	<h2>Janela </h2>
+	<h5>1 - Passe o mouse para abrir  a Janela</h5>
+	<h5>2 - Clique com o mouse para quebrar a Janela</h5>
+
+	<img src="" width="25%" name="janela" onclick="document.janela.src = imagens[2]"
+	onmouseenter="document.janela.src = imagens[1]" onmouseleave="document.janela.src = imagens[0]">
+
+	<script type="text/javascript">
+		document.janela.src = imagens[0];
+	</script>
+</body>
+</html>
