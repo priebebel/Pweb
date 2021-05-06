@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Atividade 11</title>
+
+	<script type="text/javascript">
+		
+		function formatar(){
+			if(document.forms.formulario1.elements["formatacao"].value == 1){
+				document.getElementById("texto").value = document.getElementById("texto").value.toUpperCase();
+			} else {
+				document.getElementById("texto").value = document.getElementById("texto").value.toLowerCase();
+			}
+		}
+
+	</script>
+
+</head>
+<body>
+	<form action="teste" method="POST" name="formulario1" id="formulario1">
+
+	  <div id="principal" width=200 heigth=200 align=center>
+            
+            Digite seu texto:
+            
+            <input name="texto" type="text" id="texto" size="50" maxlength="100">
+            <br>
+            <br>
+            <br>
+            <input type="radio" name="formatacao" value="1" onclick="formatar();"> Somente Letras Maíusculas
+            <input type="radio" name="formatacao" value="2" onclick="formatar();"> Somente Letras Minúsculas
+        </div>
+
+	</form>
+</body>
+</html>
