@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Atividade 12</title>
+
+	<script>
+		
+		function validar(){
+
+			if(document.forms.formulario1.elements.idNome.value == "" || document.forms.formulario1.elements.idNome.value.length < 10){
+
+				alert("Nome inválido");
+
+				document.forms.formulario1.elements.idNome.focus();
+
+				return false;
+
+			}
+
+			if (document.forms.formulario1.elements.idEmail.value == "" || document.forms.formulario1.elements.idEmail.value.indexOf('@') == -1 || document.forms.formulario1.elements.idEmail.value.indexOf('.') == -1) {
+
+                alert("Email inválido");
+
+                document.forms.formulario1.elements.idEmail.focus();
+
+                return false;
+
+            }
+
+            if (document.forms.formulario1.elements.idMensagem.value == "" || document.forms.formulario1.elements.idMensagem.value.length < 20) {
+                alert("Mínimo 20 caracteres");
+                document.getElementById("idMensagem").focus();
+                return false;
+            }
+
+			
+            mensagemVisitante();
+
+			return true;
+		}
+
+		function mensagemVisitante(){
+
+			if(document.forms.formulario1.elements["primeiraVez"].value == 2){
+				alert("Volte Sempre!");
+			} else {
+				alert("Que bom te ver!");
+			}
+
+		}
+
+	</script>
+
+</head>
+
+<body bgcolor="#800080">	
+
+	<h1>Formulário Principal</h1>
+
+	<form action="" method="POST" name="formulario1" id="formulario1" onsubmit="return validar();">
+
+		<div id="principal" width=200 heigth=200 align=left>
+            Nome:<br>
+            <input name="idNome" type="text" id="idNome" size="48" maxlength="150">
+            <br>
+            <br>
+
+            E-Mail:<br>
+            <input name="idEmail" type="email" id="idEmail" size="48" maxlength="150">
+            <br>
+            <br>
+
+            Comentário:<br>
+            <textarea name="idMensagem" cols="50" rows="8" id="idMensagem" value="" input></textarea>
+            <br>
+            <br>
+
+            
+            <br>
+            <br>
+
+            <h3>Pesquisa:</h3>
+            Primeira vez nesta página?
+            <br>
+            <br>
+
+            <input type="radio" name="primeiraVez" value="1"> Sim
+            <input type="radio" name="primeiraVez" value="2" checked> Não
+            <br>
+            <br>
+
+            <input name="Submit" type="submit" form="formulario1" value="Enviar">
+            <input name="Reset" type="reset" form="formulario1" value="Redefinir">
+
+        </div>
+
+	</form>
+
+</body>
+
+</html>
